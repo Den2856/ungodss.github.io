@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/assets/css/style.min.css">
+    <title>Аренда серверов</title>
+</head>
+
+<body>
+
+                        <!--Modal window-->
+                        <div class="popup-bg">
+                            <div class="popup">
+                                <img class="close-popup" src="/assets/images/demetra/formodal/close.png" alt="closemodal">
+                                <form id="modal__main" method="post" action="/php/mail.php" onSubmit="return checkForm(this)">
+                    
+                                    <div class="container-modal">
+                                        <h1 class="modal-h1">Аренда серверов</h1>
+                                        <label class="modal__label" for="choose1">Выберите сервер:</label>
+
+
+                                        <select class="modal__select" name="choose1" id="choose1">
+                                            <optgroup label="Стандартный">
+                                              <option value="веб аренда сервер1">Server 1</option>
+                                              <option value="веб аренда сервер2">Server 2</option>
+                                              <option value="веб аренда сервер3">Server 3</option>
+                                              <option value="веб аренда сервер4">Server 4</option>
+                                              <option value="веб аренда сервер5">Server 5</option>
+                                              <option value="веб аренда сервер6">Server 6</option>
+                                              <option value="веб аренда сервер7">Server 7</option>
+                                              <option value="веб аренда сервер8">Server 8</option>
+                                              <option value="веб аренда сервер9">Server 9</option>
+                                              <option value="веб аренда сервер10">Server 10</option>
+                                              <option value="веб аренда сервер11">Server 11</option>
+                                              <option value="веб аренда сервер12">Server 12</option>
+                                              <option value="веб аренда сервер13">Server 13</option>
+                                              <option value="веб аренда сервер14">Server 14</option>
+                                            </optgroup>
+                                            <optgroup label="Выделенный">
+                                              <option value="веб аренда ксервер1">Cserver 1</option>
+                                              <option value="веб аренда ксервер2">Cserver 2</option>
+                                              <option value="веб аренда ксервер3">Cserver 3</option>
+                                              <option value="веб аренда ксервер4">Cserver 4</option>
+                                              <option value="веб аренда ксервер5">Cserver 5</option>
+                                              <option value="веб аренда ксервер6">Cserver 6</option>
+                                            </optgroup>
+                                          </select>
+                    
+                                        <label class="modal__label" for="company">Название организации:</label>
+                                        <input class="modal__input" maxlength="30" type="text" name="company" id="company">
+                    
+                                        <label class="modal__label" for="name">Имя представителя:</label>
+                                        <input class="modal__input" maxlength="30" type="text" name="name" id="name">
+                    
+                                        <label class="modal__label" for="phone">Телефон:</label>
+                                        <input class="modal__input" maxlength="30" type="text" name="phone" id="phone">
+                    
+                                        <label class="modal__label" for="mail">Электронная почта:</label>
+                                        <input class="modal__input" maxlength="30" type="text" name="mail" id="mail">
+                    
+                                        <label class="modal__label" for="message">Сообщение:</label>
+                                        <textarea class="modal__area" rows="7" cols="50" name="message" id="message"></textarea>
+                    
+                                        <input class="modal__input" type="submit" value="Отправить">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!--END Modal window-->
+
+    <!--Header-->
+    <header class="header ">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo"><img src="/assets/images/logodemetra.png" alt="demetralogo"></div>
+
+                <ul class="nav" id="nav">
+                    <li class="nav__link"><a href="/index.html">главная</a></li>
+                    <li class="nav__link"><a href="/pages/aboutcompany.html">о компании</a></li>
+                    <li class="nav__link dropmenu"><a class="dropmenu2" href="/pages/services.html">услуги</a>
+                        <ul class="nav__dropmenu">
+                            <li><a href="/pages/services/serviceswebsite.html">создание сайтов</a></li>
+                            <li><a href="/pages/services/webarenda.html">аренда серверов</a></li>
+                            <li><a href="/pages/services/serviceswebhost.html">веб-хостинг</a></li>
+                            <li><a href="/pages/services/design.html">дизайн 2D и 3D</a></li>
+                            <li><a href="/pages/services/promotion.html">продвижение сайтов</a></li>
+                            <li><a href="/pages/services/automaticbus.html">автоматизация бизнеса</a></li>
+                            <li><a href="/pages/services/widjets.html">виджеты для сайта</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav__link"><a href="/pages/project.html">проекты</a></li>
+                    <li class="nav__link"><a href="/pages/contacts.html">контакты</a></li>
+                </ul>
+
+                <a class="header__button" href="/pages/contacts.html">оставить заявку</a>
+
+
+                <!--burger menu-->
+
+                <nav class="burger-menu">
+
+                    <input type="checkbox" id="menu" name="menu" class="m-menu__checkbox">
+
+                    <label class="m-menu__toggle" for="menu">
+                        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#e8e8e8" stroke-width="2"
+                            stroke-linecap="butt">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </label>
+                    
+                        <div class="m-menu">
+                            <div class="wrapper">
+                            <div class="m-menu__header">
+                                <label class="m-menu__toggle" for="menu">
+                                    <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#e8e8e8"
+                                        stroke-width="2" stroke-linecap="butt">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                </label>
+                            </div>
+                            <ul>
+                                <li><label><a href="/index.html">главная</a></label></li>
+                                <li><label><a id="about__burger" href="/pages/aboutcompany.html">о компании</a></label>
+                                </li>
+
+                                <li>
+                                    <label class="a-label__chevron" for="item-3">услуги</label>
+                                    <input type="checkbox" id="item-3" name="item-3" class="m-menu__checkbox">
+                                    <div class="m-menu">
+                                        <div class="m-menu__header">
+                                            <label class="m-menu__toggle" for="item-3">
+                                                <svg width="35" height="35" viewBox="0 0 24 24" fill="none"
+                                                    stroke="#e8e8e8" stroke-width="2" stroke-linecap="butt">
+                                                    <path d="M19 12H6M12 5l-7 7 7 7" />
+                                                </svg>
+                                            </label>
+                                            <span>услуги</span>
+                                        </div>
+                                        <ul>
+                                            <li><label><a href="/pages/services/serviceswebsite.html">создание
+                                                        сайтов</a></label></li>
+                                            <li><label><a href="/pages/services/webarenda.html">аренда
+                                                        серверов</a></label>
+                                            </li>
+                                            <li><label><a href="/pages/services/serviceswebhost.html">веб
+                                                        хостинг</a></label>
+                                            </li>
+                                            <li><label><a href="/pages/services/design.html">дизайн 2D & 3D</a></label>
+                                            </li>
+                                            <li><label><a href="/pages/services/promotion.html">продвижение
+                                                        сайтов</a></label></li>
+                                            <li><label><a href="/pages/services/automaticbus.html">автоматизация
+                                                        бизнеса</a></label></li>
+                                            <li><label><a href="/pages/services/widjets.html">виджеты для
+                                                        сайта</a></label></li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li><label><a href="/pages/project.html">проекты</a></label></li>
+                                <li><label><a href="/pages/contacts.html">контакты</a></label></li>
+                                <li class="header__li-modal">
+                                    <a class="header__button-modal" href="/pages/contacts.html">оставить заявку</a>
+                                </li>
+                               </div> 
+                            </ul>
+                        </div>
+                    
+
+
+                </nav>
+
+                <!--END burger menu-->
+
+
+            </div>
+        </div>
+    </header>
+    <!--END Header-->
+
+
+    <!--Navigation page-->
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <div class="page-header__flex">
+                    <p class="page-header__text"> <a href="/index.html">Главная</a></p>
+                    <p class="page-header__text">/</p>
+                    <p class="page-header__text"> <a href="/pages/services.html">Услуги</a></p>
+                    <p class="page-header__text">/</p>
+                    <p class="page-header__text"> <a href="/pages/services/webarenda.html">Аренда серверов</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--END Navigation page-->
+
+    <!--WebArenda top-->
+    <section class="webarenda">
+        <div class="webarenda__inner">
+            <div class="webarenda__left">
+                <h3 class="webarenda__title_brown fzetitn">Услуга</h3>
+                <h2 class="fztwtyfe">Аренда серверов</h2>
+                <p class="webarenda__text-main fzsixtn">Аренда VPS сервера дает вам полный контроль над ним как при
+                    аренде
+                    физического сервера, но по цене сравнимой со стоимостью виртуального хостинга.
+                </p>
+            </div>
+            <div class="webarenda__right">
+                <div class="accordion">
+                    <div class="accordionarenda__item" data-collapse="#wedo_1">
+                        <div class="accordionarenda__header">
+                            <div class="accordionarenda__title">КАК БЫСТРО Я СМОГУ ПОЛУЧИТЬ СЕРВЕР? КАК НАЧАТЬ РАБОТУ?
+                            </div>
+                        </div>
+                        <div class="accordionarenda__content" id="wedo_1">
+                            <p class="fzsixtn">Сервера заранее готовы к работе и доступны сразу после оплаты. Оплатить
+                                можно с помощью
+                                любых популярных средств оплаты - кредитной картой, через КИВИ, через ЮMoney, для
+                                юридических лиц и ИП - по безналичному расчету.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordionarenda__item" data-collapse="#wedo_2">
+                        <div class="accordionarenda__header">
+                            <div class="accordionarenda__title">ЭТО НАДЕЖНОЕ, СОВРЕМЕННОЕ, НОВОЕ ОБОРУДОВАНИЕ?</div>
+                        </div>
+                        <div class="accordionarenda__content" id="wedo_2">
+                            <p class="fzsixtn">Это оборудование обладает высокой надежностью, современными технологиями
+                                и является
+                                новейшим на рынке. Оно способно эффективно выполнять свои функции и обеспечивать высокое
+                                качество работы.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordionarenda__item" data-collapse="#wedo_3">
+                        <div class="accordionarenda__header">
+                            <div class="accordionarenda__title">Какая операционная система на серверах?</div>
+                        </div>
+                        <div class="accordionarenda__content" id="wedo_3">
+                            <p class="fzsixtn">Для вашего удобства, на все сервера без гарантии предустановлена ОС
+                                Ubuntu последней
+                                версии, которой можно начать пользоваться сразу в момент заказа. Поэтому если такой
+                                выбор вам подходит, то устанавливать какую-либо ОС самостоятельно вам не придется.
+                                Какой-либо гарантии на работу этой ОС не предоставляется.</p>
+                        </div>
+                    </div>
+
+                </div><!-- /.accordion -->
+            </div>
+        </div>
+    </section>
+    <!--WebArend middle and bottom-->
+
+    <section class="middleofservices">
+        <div class="middleofservices__head">
+            <div class="middleofservices__subtitle">Доступные цены - качественные серверы</div>
+            <div class="middleofservices__suptitle fzsixtn">Стандартный</div>
+        </div>
+        <div class="arendserver__flex">
+            <div class="arendserver__items">
+                <div class="arendserver__cont">
+                    <h3 class="arendserver__title arendserver__title_brown">Server 1</h3>
+                    <div class="arendserver__item arendserver__item-mod">1 intel vcpu</div>
+                    <div class="arendserver__item arendserver__item-mod">2 gb ram</div>
+                    <div class="arendserver__item arendserver__item-mod">20 gb ssd</div>
+                    <div class="arendserver__item arendserver__item-mod">20 tb traffic</div>
+                    <div class="arendserver__price arendserver__item-mod arendserver__price_brown">964.34RUB</div>
+                    <a class="arendserver__button open-popup" href="#">Заказать</a>
+                </div>
+            </div>
+
+            <div class="arendserver__items">
+                <div class="arendserver__cont">
+                    <h3 class="arendserver__title arendserver__title_brown">Server 2</h3>
+                    <div class="arendserver__item arendserver__item-mod">2 ampere vcpu</div>
+                    <div class="arendserver__item arendserver__item-mod">4 gb ram</div>
+                    <div class="arendserver__item arendserver__item-mod">40 gb ssd</div>
+                    <div class="arendserver__item arendserver__item-mod">20 tb traffic</div>
+                    <div class="arendserver__price arendserver__item-mod arendserver__price_brown">964.34RUB</div>
+                    <a class="arendserver__button open-popup" href="#">Заказать</a>
+                </div>
+            </div>
+
+            <div class="arendserver__items">
+                <div class="arendserver__cont">
+                    <h3 class="arendserver__title arendserver__title_brown">Server 3</h3>
+                    <div class="arendserver__item arendserver__item-mod">2 amd vcpu</div>
+                    <div class="arendserver__item arendserver__item-mod">2 gb ram</div>
+                    <div class="arendserver__item arendserver__item-mod">40 gb ssd</div>
+                    <div class="arendserver__item arendserver__item-mod">20 tb traffic</div>
+                    <div class="arendserver__price arendserver__item-mod arendserver__price_brown">1097.74RUB</div>
+                    <a class="arendserver__button open-popup" href="#">Заказать</a>
+                </div>
+            </div>
+
+
+            <div class="arendserver__items">
+                <div class="arendserver__cont">
+                    <h3 class="arendserver__title arendserver__title_brown">Server 4</h3>
+                    <div class="arendserver__item arendserver__item-mod">2 intel vcpu</div>
+                    <div class="arendserver__item arendserver__item-mod">4 gb ram</div>
+                    <div class="arendserver__item arendserver__item-mod">40 gb ssd</div>
+                    <div class="arendserver__item arendserver__item-mod">20 tb traffic</div>
+                    <div class="arendserver__price arendserver__item-mod arendserver__price_brown">1302.34RUB</div>
+                    <a class="arendserver__button open-popup" href="#">Заказать</a>
+                </div>
+            </div>
+
+            <div class="arendserver__items">
+                <div class="arendserver__cont">
+                    <h3 class="arendserver__title arendserver__title_brown">Server 5</h3>
+                    <div class="arendserver__item arendserver__item-mod">4 ampere vcpu</div>
+                    <div class="arendserver__item arendserver__item-mod">8 gb ram</div>
+                    <div class="arendserver__item arendserver__item-mod">80 gb ssd</div>
+                    <div class="arendserver__item arendserver__item-mod">20 tb traffic</div>
+                    <div class="arendserver__price arendserver__item-mod arendserver__price_brown">1536.84RUB</div>
+                    <a class="arendserver__button open-popup" href="#">Заказать</a>
+                </div>
+            </div>
+
+            <div class="arendserver__items">
+                <div class="arendserver__cont">
+                    <h3 class="arendserver__title arendserver__title_brown">Server 6</h3>
+                    <div class="arendserver__item arendserver__item-mod">3 amd vcpu</div>
+                    <div class="arendserver__item arendserver__item-mod">4 gb ram</div>
+                    <div class="arendserver__item arendserver__item-mod">80 gb ssd</div>
+                    <div class="arendserver__item arendserver__item-mod">20 tb traffic</div>
+                    <div class="arendserver__price arendserver__item-mod arendserver__price_brown">1754.33RUB</div>
+                    <a class="arendserver__button open-popup" href="#">Заказать</a>
+                </div>
+            </div>
+
+
+            <div class="arendserver__items">
+                <div class="arendserver__cont">
+                    <h3 class="arendserver__title arendserver__title_brown">Server 7</h3>
+                    <div class="arendserver__item arendserver__item-mod">2 intel vcpu</div>
+                    <div class="arendserver__item arendserver__item-mod">8 gb ram</div>
+                    <div class="arendserver__item arendserver__item-mod">80 gb ssd</div>
+                    <div class="arendserver__item arendserver__item-mod">20 tb traffic</div>
+                    <div class="arendserver__price arendserver__item-mod arendserver__price_brown">2195.48RUB</div>
+                    <a class="arendserver__button open-popup" href="#">Заказать</a>
+                </div>
+            </div>
+
+            <div class="arendserver__items">
+                <div class="arendserver__cont">
+                    <h3 class="arendserver__title arendserver__title_brown">Server 8</h3>
+                    <div class="arendserver__item arendserver__item-mod">8 ampere vcpu</div>
+                    <div class="arendserver__item arendserver__item-mod">16 gb ram</div>
+                    <div class="arendserver__item arendserver__item-mod">160 gb ssd</div>
+                    <div class="arendserver__item arendserver__item-mod">20 tb traffic</div>
+                    <div class="arendserver__price arendserver__item-mod arendserver__price_brown">2767.95RUB</div>
+                    <a class="arendserver__button open-popup" href="#">Заказать</a>
+                </div>
+            </div>
+
+            <div class="arendserver__items">
+                <div class="arendserver__cont">
+                    <h3 class="arendserver__title arendserver__title_brown">Server 9</h3>
+                    <div class="arendserver__item arendserver__item-mod">4 amd vcpu</div>
+                    <div class="arendserver__item arendserver__item-mod">8 gb ram</div>
+                    <div class="arendserver__item arendserver__item-mod">160 gb ssd</div>
+                    <div class="arendserver__item arendserver__item-mod">20 tb traffic</div>
+                    <div class="arendserver__price arendserver__item-mod arendserver__price_brown">2995.7RUB</div>
+                    <a class="arendserver__button open-popup" href="#">Заказать</a>
+                </div>
+            </div>
+
+
+
+            <div class="arendserver__items">
+                <div class="arendserver__cont">
+                    <h3 class="arendserver__title arendserver__title_brown">Server 10</h3>
+                    <div class="arendserver__item arendserver__item-mod">4 intel vcpu</div>
+                    <div class="arendserver__item arendserver__item-mod">16 gb ram</div>
+                    <div class="arendserver__item arendserver__item-mod">160 gb ssd</div>
+                    <div class="arendserver__item arendserver__item-mod">20 tb traffic</div>
+                    <div class="arendserver__price arendserver__item-mod arendserver__price_brown">3375.41RUB</div>
+                    <a class="arendserver__button open-popup" href="#">Заказать</a>
+                </div>
+            </div>
+
+            <div class="arendserver__items">
+                <div class="arendserver__cont">
+                    <h3 class="arendserver__title arendserver__title_brown">Server 11</h3>
+                    <div class="arendserver__item arendserver__item-mod">8 amd vcpu</div>
+                    <div class="arendserver__item arendserver__item-mod">16 gb ram</div>
+                    <div class="arendserver__item arendserver__item-mod">240 gb ssd</div>
+                    <div class="arendserver__item arendserver__item-mod">20 tb traffic</div>
+                    <div class="arendserver__price arendserver__item-mod arendserver__price_brown">5375.34RUB</div>
+                    <a class="arendserver__button open-popup" href="#">Заказать</a>
+                </div>
+            </div>
+
+            <div class="arendserver__items">
+                <div class="arendserver__cont">
+                    <h3 class="arendserver__title arendserver__title_brown">Server 12</h3>
+                    <div class="arendserver__item arendserver__item-mod">16 ampere vcpu</div>
+                    <div class="arendserver__item arendserver__item-mod">32 gb ram</div>
+                    <div class="arendserver__item arendserver__item-mod">320 gb ssd</div>
+                    <div class="arendserver__item arendserver__item-mod">20 tb traffic</div>
+                    <div class="arendserver__price arendserver__item-mod arendserver__price_brown">5240.34RUB</div>
+                    <a class="arendserver__button open-popup" href="#">Заказать</a>
+                </div>
+            </div>
+
+            <div class="arendserver__items">
+                <div class="arendserver__cont">
+                    <h3 class="arendserver__title arendserver__title_brown">Server 13</h3>
+                    <div class="arendserver__item arendserver__item-mod">8 intel vcpu</div>
+                    <div class="arendserver__item arendserver__item-mod">32 gb ram</div>
+                    <div class="arendserver__item arendserver__item-mod">240 gb ssd</div>
+                    <div class="arendserver__item arendserver__item-mod">20 tb traffic</div>
+                    <div class="arendserver__price arendserver__item-mod arendserver__price_brown">6964.34RUB</div>
+                    <a class="arendserver__button open-popup" href="#">Заказать</a>
+                </div>
+            </div>
+
+            <div class="arendserver__items">
+                <div class="arendserver__cont">
+                    <h3 class="arendserver__title arendserver__title_brown">Server 14</h3>
+                    <div class="arendserver__item arendserver__item-mod">16 amd vcpu</div>
+                    <div class="arendserver__item arendserver__item-mod">32 gb ram</div>
+                    <div class="arendserver__item arendserver__item-mod">360 gb ssd</div>
+                    <div class="arendserver__item arendserver__item-mod">20 tb traffic</div>
+                    <div class="arendserver__price arendserver__item-mod arendserver__price_brown">11964.34RUB</div>
+                    <a class="arendserver__button open-popup" href="#">Заказать</a>
+                </div>
+            </div>
+        </div>
+        <!--Выделенные-->
+        <div class="middleofservices__suptitle-second">Выделенный</div>
+        <div class="arendserver__flex">
+            <div class="arendserver__items">
+                <div class="arendserver__cont">
+                    <h3 class="arendserver__title arendserver__title_brown">Cserver 1</h3>
+                    <div class="arendserver__item arendserver__item-mod">2 intel vcpu</div>
+                    <div class="arendserver__item arendserver__item-mod">8 gb ram</div>
+                    <div class="arendserver__item arendserver__item-mod">80 gb ssd</div>
+                    <div class="arendserver__item arendserver__item-mod">20 tb traffic</div>
+                    <div class="arendserver__price arendserver__item-mod arendserver__price_brown">2964.34RUB</div>
+                    <a class="arendserver__button open-popup" href="#">Заказать</a>
+                </div>
+            </div>
+
+            <div class="arendserver__items">
+                <div class="arendserver__cont">
+                    <h3 class="arendserver__title arendserver__title_brown">Cserver 2</h3>
+                    <div class="arendserver__item arendserver__item-mod">4 intel vcpu</div>
+                    <div class="arendserver__item arendserver__item-mod">16 gb ram</div>
+                    <div class="arendserver__item arendserver__item-mod">160 gb ssd</div>
+                    <div class="arendserver__item arendserver__item-mod">20 tb traffic</div>
+                    <div class="arendserver__price arendserver__item-mod arendserver__price_brown">964.34RUB</div>
+                    <a class="arendserver__button open-popup" href="#">Заказать</a>
+                </div>
+            </div>
+
+            <div class="arendserver__items">
+                <div class="arendserver__cont">
+                    <h3 class="arendserver__title arendserver__title_brown">Cserver 3</h3>
+                    <div class="arendserver__item arendserver__item-mod">8 intel vcpu</div>
+                    <div class="arendserver__item arendserver__item-mod">32 gb ram</div>
+                    <div class="arendserver__item arendserver__item-mod">240 gb ssd</div>
+                    <div class="arendserver__item arendserver__item-mod">20 tb traffic</div>
+                    <div class="arendserver__price arendserver__item-mod arendserver__price_brown">10964.34RUB</div>
+                    <a class="arendserver__button open-popup" href="#">Заказать</a>
+                </div>
+            </div>
+
+            <div class="arendserver__items">
+                <div class="arendserver__cont">
+                    <h3 class="arendserver__title arendserver__title_brown">Cserver 4</h3>
+                    <div class="arendserver__item arendserver__item-mod">16 intel vcpu</div>
+                    <div class="arendserver__item arendserver__item-mod">64 gb ram</div>
+                    <div class="arendserver__item arendserver__item-mod">360 gb ssd</div>
+                    <div class="arendserver__item arendserver__item-mod">20 tb traffic</div>
+                    <div class="arendserver__price arendserver__item-mod arendserver__price_brown">20064.34RUB</div>
+                    <a class="arendserver__button open-popup" href="#">Заказать</a>
+                </div>
+            </div>
+
+            <div class="arendserver__items">
+                <div class="arendserver__cont">
+                    <h3 class="arendserver__title arendserver__title_brown">Cserver 5</h3>
+                    <div class="arendserver__item arendserver__item-mod">32 intel vcpu</div>
+                    <div class="arendserver__item arendserver__item-mod">128 gb ram</div>
+                    <div class="arendserver__item arendserver__item-mod">600 gb ssd</div>
+                    <div class="arendserver__item arendserver__item-mod">20 tb traffic</div>
+                    <div class="arendserver__price arendserver__item-mod arendserver__price_brown">39964.34RUB</div>
+                    <a class="arendserver__button open-popup" href="#">Заказать</a>
+                </div>
+            </div>
+
+            <div class="arendserver__items">
+                <div class="arendserver__cont">
+                    <h3 class="arendserver__title arendserver__title_brown">Cserver 6</h3>
+                    <div class="arendserver__item arendserver__item-mod">48 intel vcpu</div>
+                    <div class="arendserver__item arendserver__item-mod">192 gb ram</div>
+                    <div class="arendserver__item arendserver__item-mod">960 gb ssd</div>
+                    <div class="arendserver__item arendserver__item-mod">20 tb traffic</div>
+                    <div class="arendserver__price arendserver__item-mod arendserver__price_brown">59464.34RUB</div>
+                    <a class="arendserver__button open-popup" href="#">Заказать</a>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+    <!--Projects request-->
+    <section class="section section__connect--padding section--white">
+        <div class="container">
+            <div class="connect">
+                <div class="connect__content">
+                    <p class="connect__text fzsixtn">Начните сотрудничество с «Demetra soft» прямо сейчас!<br>
+                        Оставь заявку и мы свяжемся с Вами в ближайшее время.</p>
+                        <a  class="connect__button fzsixtn" href="/pages/contacts.html">оставить заявку</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--END  Projects request -->
+
+
+    <!--Footer-->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title fzthirty">Контакты</h2>
+                <div class="contact__line--l"></div>
+            </div>
+            <div class="footer__inner">
+                <div class="footer__col  footer__col--first">
+                    <div class="footer__item">
+                        <div class="footer__suptitle ">Наш адрес:</div>
+                        <div class="footer__text">г.Екатеринбург, ул.Старых Большевиков, ст.2А, п.17</div>
+                    </div>
+                    <div class="footer__item">
+                        <div class="footer__suptitle">Время работы:</div>
+                        <div class="footer__text">Понедельник – Пятница: с 8:00 до 17:00</div>
+                    </div>
+                    <div class="footer__item">
+                        <div class="footer__suptitle">Телефон:</div>
+                        <div class="footer__text"><a href="tel:+79191238804">+79191238804</a></div>
+                    </div>
+                    <div class="footer__item">
+                        <div class="footer__suptitle">Напишите нам:</div>
+                        <div class="footer__text"><a href="mailto:Softdemetra@gmail.com">Softdemetra@gmail.com</a></div>
+                    </div>
+
+
+                </div><!-- footer__col 1-->
+                <!--Footer Icons-->
+                <div class="footer__col footer__col--second">
+                    <div class="footer__title-social fzetitn">Социальные сети:</div>
+                    <div class="footer__social-icon">
+
+                        <a class="telegram-link social__margin" href="tg://resolve?domain=+79191238804">
+                            <svg class="telegram-style" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="54" viewBox="0 0 54 54">
+                                <image id="телеграм_лого" data-name="телеграм лого" width="54" height="54"
+                                    xlink:href="data:image/png;base64,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" />
+                            </svg></a>
+                        <a class="whatsapp-link social__margin" href="https://wa.me/+79191238804">
+                            <svg class="whatsapp-style" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" width="54" height="54" viewBox="0 0 54 54">
+                                <image id="ватсап_лого" data-name="ватсап лого" width="50" height="54"
+                                    xlink:href="data:image/png;base64,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" />
+                            </svg></a>
+                    </div>
+                </div><!-- footer__col 2-->
+                <!--Footer Icons-->
+
+
+
+            </div><!--footer__inner -->
+
+            <div class="copyright">
+                © 2024 ВСЕ ПРАВА ЗАЩИЩЕНЫ ООО «ДЕМЕТРА СОФТ»
+            </div>
+
+        </div><!-- container -->
+    </footer>
+    <!--END Footer-->
+
+
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/js/formodal/js-minify-validate.js"></script>
+    <script src="/js/js-minify-someanimation.js"></script>
+
+</body>
+
+</html>
